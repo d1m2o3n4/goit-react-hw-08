@@ -1,0 +1,20 @@
+.contForm {
+  border: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 30px;
+}
+.addContactBtn {
+  width: 130px;
+  padding: 5px;
+  margin: 0 auto;
+}
+.errorMsg {
+  color: red;
+}

@@ -1,0 +1,24 @@
+.contactItem {
+  display: flex;
+  gap: 50px;
+  max-width: 300px;
+  justify-content: space-between;
+  border: 1px solid black;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.infoWrapper > p {
+  margin: 0;
+}
+.contactDeleteBtn {
+  padding: 7px;
+}
+.contactIcon {
+  margin-right: 10px;
+}

@@ -2,14 +2,14 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import s from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
+import { addContactThunk } from "../../redux/contacts/operations";
 
-import { addContactThunk } from "../../redux/contactsOps";
 const validationSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  phone: Yup.string()
+  number: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
@@ -18,7 +18,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   return (
     <Formik
-      initialValues={{ name: "", phone: "" }}
+      initialValues={{ name: "", number: "" }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
         dispatch(addContactThunk(values));
@@ -33,9 +33,9 @@ const ContactForm = () => {
           <ErrorMessage component="div" name="name" className={s.errorMsg} />
         </div>
         <div className={s.inputWrapper}>
-          <label htmlFor="phone">Phone</label>
-          <Field name="phone" />
-          <ErrorMessage component="div" name="phone" className={s.errorMsg} />
+          <label htmlFor="number">Phone</label>
+          <Field name="number" />
+          <ErrorMessage component="div" name="number" className={s.errorMsg} />
         </div>
         <button type="submit" className={s.addContactBtn}>
           Add contact

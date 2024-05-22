@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import s from "./Contact.module.css";
 import { FaUserAlt, FaPhoneAlt } from "react-icons/fa";
+import { deleteContactsThunk } from "../../redux/contacts/operations";
 
-import { deleteContactsThunk } from "../../redux/contactsOps";
-const Contact = ({ id, name, phone }) => {
+const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   return (
@@ -15,7 +15,7 @@ const Contact = ({ id, name, phone }) => {
         </p>
         <p>
           <FaPhoneAlt className={s.contactIcon} />
-          {phone}
+          {number}
         </p>
       </div>
       <button
